@@ -1,4 +1,3 @@
-# Shojeb_shoe_shop
 # ShojebShoeShop
 
 Welcome to Shojeb's Shoe Shop! This repository contains the source code for our online shoe store.
