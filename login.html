@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Shoe Shop</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background: url('11406.jpg') no-repeat right center fixed;
+            background-size: cover; /* Cover the whole page */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px; /* Add padding for spacing */
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background color */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px; /* Limit the width of the login container */
+            z-index: 2; /* Ensure it appears above the background image */
+        }
+        .login-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-header h2 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            border-radius: 0;
+        }
+        .btn-login {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            width: 100%;
+        }
+        .btn-login:hover {
+            background-color: #218838;
+        }
+        .signup-option {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .signup-option a {
+            color: #28a745;
+            text-decoration: none;
+        }
+        .signup-option a:hover {
+            text-decoration: underline;
+        }
+        .help-center {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h2><span class="login-icon">🔑</span> Login</h2>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-login">Login</button>
+        </form>
+        <div class="signup-option">
+            <p>Don't have an account? <a href="#">Sign Up</a></p>
+        </div>
+        <div class="help-center">
+            <p>Need help? <a href="mailto:your-email@example.com">Contact Support</a> | <a href="#">Help Center</a></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

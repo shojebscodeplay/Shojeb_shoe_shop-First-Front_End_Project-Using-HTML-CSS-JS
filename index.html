@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Shop</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #d20e0e29; /* light blue background color */
+        }
+        .shop-banner {
+            background-color: #b7ba13; /* Green background color for banner */
+            color: #fff; /* White text color */
+            padding: 10px 0; /* Padding top and bottom */
+            text-align: center; /* Center align text */
+            font-weight: bold; /* Bold text */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Example of a stylish font */
+            font-size: 1.5rem; /* Adjust font size as needed */
+        }
+        .shop-name {
+            color: #231ac3b4; /* Change the color value to your desired color */
+            font-weight: bold;        
+            }
+        .btn-add-to-cart {
+            background-color: #28a745; /* Green color for 'Add to Cart' button */
+            color: #fff; /* White text color */
+            border: none; /* Remove border */
+        }
+        .btn-add-to-cart:hover {
+            background-color: #218838; /* Darker green on hover */
+            color: #fff; /* White text color */
+        }
+        .card-body {
+            flex: 1; /* Allow the card body to grow to fill available space */
+        }
+        .quantity-btn-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .quantity-btn {
+            cursor: pointer;
+            flex: 1;
+            text-align: center;
+        }
+        .quantity-label {
+            margin-left: 5px;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+        .shop-name-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px; /* Adjust height as needed */
+        }
+        .shop-name {
+            text-align: center;
+            margin: 0;
+            font-size: 2.5rem; /* Adjust font size as needed */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Log in First to continue</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html"><span class="login-icon">👤</span>Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="shop-banner">
+        🎉👟Special Offer: 30% Off on Every 3rd of the Month!👟🎉
+    </div>
+    <div class="container">
+        <div class="shop-name-container">
+            <h1 class="shop-name my-4">Welcome to Shojeb's Shoe Shop</h1>
+        </div>
+        <!-- Search form -->
+        <form class="search-form mb-4" id="search-form">
+            <div class="input-group">
+                <input list="shoe-options" type="text" class="form-control" id="search-input" placeholder="Search for shoes...">
+                <datalist id="shoe-options">
+                    <option value="Sporty Sneakers">
+                    <option value="Classic Leather Shoes">
+                    <option value="Comfortable Sandals">
+                    <option value="Winter Boots">
+                </datalist>
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-primary" onclick="searchShoes()">Search</button>
+                </div>
+            </div>
+        </form>
+        <!-- Shoe listings -->
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <img src="https://d1lfxha3ugu3d4.cloudfront.net/assets/system-images/made/assets/system-images/remote/https_d1lfxha3ugu3d4.cloudfront.net/exhibitions/images/2015_Sneaker_Culture_1._AJ_1_from_Nike_4000W.jpg_600_400.jpg" class="card-img-top" alt="Shoe 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Sporty Sneakers</h5>
+                        <p class="card-text">$50.00</p>
+                        <div class="quantity-btn-group">
+                            <button class="btn btn-add-to-cart quantity-btn" onclick="addToCart('Sporty Sneakers', 50, 'remove')">-</button>
+                            <span class="quantity-label" id="quantity-Sporty-Sneakers">0</span>
+                            <button class="btn btn-add-to-cart quantity-btn" onclick="addToCart('Sporty Sneakers', 50, 'add')">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <img src="https://i0.wp.com/pristineshop.com.bd/wp-content/uploads/2023/08/90057885.jpg?fit=800%2C800&ssl=1" class="card-img-top" alt="Shoe 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Classic Leather Shoes</h5>
+                        <p class="card-text">$75.00</p>
+                        <div class="quantity-btn-group">
+                            <button class="btn btn-add-to-cart quantity-btn" onclick="addToCart('Classic Leather Shoes', 75, 'remove')">-</button>
+                            <span class="quantity-label" id="quantity-Classic-Leather-Shoes">0</span>
+                            <button class="btn btn-add-to-cart quantity-btn" onclick="addToCart('Classic Leather Shoes', 75, 'add')">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <img src="https://www.refinery29.com/images/10462232.png?format=webp&width=720&height=864&quality=85&crop=5%3A6" class="card-img-top" alt="Shoe 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Comfortable Sandals</h5>
+                        <p class="card-text">$30.00</p>
+                        <div class="quantity-btn-group">
+                            <button class="btn btn-add-to-cart quantity-btn" onclick="addToCart('Comfortable Sandals', 30, 'remove')">-</button>
+                            <span class="quantity-label" id="quantity-Comfortable-Sandals">0</span>
+                            <button class="btn btn-add-to-cart quantity-btn" onclick="addToCart('Comfortable Sandals', 30, 'add')">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3H3myIoSNlSXNyfwSsngjmT_wyvEQ-8ofBQ&s" class="card-img-top" alt="Shoe 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Winter Boots</h5>
+                        <p class="card-text">$90.00</p>
+                        <div class="quantity-btn-group">
+                            <button class="btn btn-add-to-cart quantity-btn" onclick="addToCart('Winter Boots', 90, 'remove')">-</button>
+                            <span class="quantity-label" id="quantity-Winter-Boots">0</span>
+                            <button class="btn btn-add-to-cart quantity-btn" onclick="addToCart('Winter Boots', 90, 'add')">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cart section -->
+        <div id="cart-section">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </ul>
+            <p>Total: $<span id="total-cost">0.00</span></p>
+            <button class="btn btn-primary" onclick="makePayment()">Make Payment</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript for adding to cart -->
+    <script>
+        let cartItems = []; // Array to store cart items
+        let totalPrice = 0; // Variable to store total price
+
+        function addToCart(itemName, price, action) {
+            let itemExists = false;
+
+            // Check if the item already exists in the cart
+            for (let i = 0; i < cartItems.length; i++) {
+                if (cartItems[i].name === itemName) {
+                    if (action === 'add') {
+                        cartItems[i].quantity++;
+                        totalPrice += price;
+                    } else if (action === 'remove' && cartItems[i].quantity > 0) {
+                        cartItems[i].quantity--;
+                        totalPrice -= price;
+                    }
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If item doesn't exist in cart, add it
+            if (!itemExists && action === 'add') {
+                cartItems.push({ name: itemName, price: price, quantity: 1 });
+                totalPrice += price;
+            }
+
+            updateCart();
+        }
+
+        function updateCart() {
+            let cartList = document.getElementById('cart-items');
+            let totalCostElement = document.getElementById('total-cost');
+            cartList.innerHTML = ''; // Clear previous items
+            totalCostElement.textContent = totalPrice.toFixed(2); // Update total cost
+
+            cartItems.forEach(item => {
+                if (item.quantity > 0) {
+                    let li = document.createElement('li');
+                    li.textContent = `${item.name} - Quantity: ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`;
+                    cartList.appendChild(li);
+
+                    // Update quantity label in the respective card
+                    let quantityLabel = document.getElementById(`quantity-${item.name.replace(/\s+/g, '-')}`);
+                    if (quantityLabel) {
+                        quantityLabel.textContent = item.quantity;
+                    }
+                }
+            })
+        }
+
+        function makePayment() {
+            // Replace with your payment gateway or link
+            window.location.href = 'https://www.bkash.com/';
+        }
+    </script>
+</body>
+</html>
