@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Method Page</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Method</h1>
+        <form id="payment-form">
+            <div class="form-section">
+                <div class="customer-details">
+                    <h2>Customer Details</h2>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" required>
+
+                    <label for="Phone Number">Number</label>
+                    <input type="text" id="phone no" name="Number" required>
+                </div>
+
+                <div class="payment-details">
+                    <h2>Payment Details</h2>
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="bkash">Bkash</option>
+                        <option value="nagad">Nagad</option>
+                        <option value="rocket">Rocket</option>
+                    </select>
+
+                    <label for="transaction-number">Transaction Number</label>
+                    <input type="text" id="transaction-number" name="transaction-number" required>
+
+                    <label for="billing-address">Billing Address</label>
+                    <input type="text" id="billing-address" name="billing-address" value="01304748578" readonly>
+                </div>
+            </div>
+
+            <button type="submit">Submit Payment</button>
+        </form>
+    </div>
+
+    <script src="payment.css"></script>
+</body>
+</html>
