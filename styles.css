@@ -1,6 +1,6 @@
 /* styles.css */
 body {
-    background-color: #d20e0e29; /* light blue background color */
+    background-color: #c1e2f79e; /* light blue background color */
 }
 .shop-banner {
     position: relative;
@@ -28,16 +28,9 @@ body {
     --gradient-border: conic-gradient(
         from var(--border-angle),
         transparent 50%,
-        #08f,
-        #f03 ,
-        yellow,
-        pink,
-        green,
-        seagreen,
-        black,
-        orange,
-        blueviolet,
-        gold,
+        rgba(94, 16, 204, 0.605),
+        rgb(196, 12, 12) ,
+
         transparent
     );
 
@@ -67,6 +60,7 @@ body {
     inherits: true;
     initial-value: 0turn;
 }
+
 .shop-name {
     color: #231ac3b4;
     font-weight: bold;
