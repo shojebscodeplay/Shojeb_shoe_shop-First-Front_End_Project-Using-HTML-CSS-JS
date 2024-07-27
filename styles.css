@@ -10,7 +10,7 @@ body {
     place-content: center;
     color: rgba(46, 97, 49, 0.354);
     text-shadow: 0 1px 0 #000;
-    background-color: #e0e276;
+    background-color: #246a39cd;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5rem;
@@ -19,9 +19,9 @@ body {
     --border-angle: 2.3turn; /* For animation */
     --main-bg: conic-gradient(
         from var(--border-angle),
-        #dab317,
-        #a2a200 5%,
-        #a2a200 60%,
+        #95f312c2,
+        #ffff09 5%,
+        #a3e823 60%,
         #b7ba13 95%
     );
 
