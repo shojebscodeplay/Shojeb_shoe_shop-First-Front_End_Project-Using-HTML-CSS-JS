@@ -1,105 +1,189 @@
-/* styles.css */
+/* General Styles */
 body {
-    background-color: #c1e2f79e; /* light blue background color */
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
-.shop-banner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-content: center;
-    color: rgba(46, 97, 49, 0.354);
-    text-shadow: 0 1px 0 #000;
-    background-color: #246a39cd;
+
+/* Navigation Bar */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.5rem;
-    border: solid 10px transparent;
-    border-radius: 2em;
-    --border-angle: 2.3turn; /* For animation */
-    --main-bg: conic-gradient(
-        from var(--border-angle),
-        #95f312c2,
-        #ffff09 5%,
-        #a3e823 60%,
-        #b7ba13 95%
-    );
-
-    --gradient-border: conic-gradient(
-        from var(--border-angle),
-        transparent 50%,
-        rgba(94, 16, 204, 0.605),
-        rgb(196, 12, 12) ,
-
-        transparent
-    );
-
-    background:
-        var(--main-bg) padding-box,
-        var(--gradient-border) border-box,
-        var(--main-bg) border-box;
-
-    background-position: center center;
-    background-clip: padding-box, border-box;
-    animation: bg-spin 3s linear infinite;
+    color: #007bff !important;
 }
 
-@keyframes bg-spin {
-    to {
-        --border-angle: 0.5turn;
-    }
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease-in-out;
 }
 
-.shop-banner:hover {
-    animation-play-state: paused;
+.navbar-nav .nav-link:hover {
+    color: #0056b3;
 }
 
-/* CSS property definition for --border-angle */
-@property --border-angle {
-    syntax: "<angle>";
-    inherits: true;
-    initial-value: 0turn;
+/* Banner */
+.shop-banner {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+/* Shop Name */
+.shop-name-container {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .shop-name {
-    color: #231ac3b4;
+    font-size: 2rem;
     font-weight: bold;
+    color: #343a40;
 }
-.btn-add-to-cart {
-    background-color: #28a745;
-    color: #fff;
+
+/* Search Bar */
+.search-form .form-control {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.search-form .btn-primary {
+    background-color: #007bff;
     border: none;
+    transition: background 0.3s ease-in-out;
 }
-.btn-add-to-cart:hover {
-    background-color: #218838;
-    color: #fff;
+
+.search-form .btn-primary:hover {
+    background-color: #0056b3;
 }
-.card-body {
-    flex: 1;
+
+/* Shoe Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Quantity Buttons */
 .quantity-btn-group {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
+    margin-top: 10px;
 }
+
 .quantity-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
-    flex: 1;
-    text-align: center;
+    transition: background 0.3s ease-in-out;
 }
+
+.quantity-btn:hover {
+    background-color: #0056b3;
+}
+
 .quantity-label {
-    margin-left: 5px;
-    margin-right: 5px;
+    font-size: 1.1rem;
     font-weight: bold;
+    margin: 0 10px;
 }
-.shop-name-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
+
+/* Cart Section */
+#cart-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
 }
-.shop-name {
-    text-align: center;
-    margin: 0;
-    font-size: 2.5rem;
+
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart-items li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart-items li:last-child {
+    border-bottom: none;
+}
+
+#total-cost {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .shop-name {
+        font-size: 1.8rem;
+    }
+
+    .shop-banner {
+        font-size: 1rem;
+    }
+
+    .card-img-top {
+        height: 150px;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
 }
